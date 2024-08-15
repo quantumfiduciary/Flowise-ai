@@ -10,7 +10,7 @@ services:
             - FLOWISE_PASSWORD=${FLOWISE_PASSWORD}
             - FLOWISE_SECRETKEY_OVERWRITE=${FLOWISE_SECRETKEY_OVERWRITE}
         ports:
-            - '${PORT:-3000}:${PORT:-3001}'
+            - '${PORT:-3000}:${PORT:-3000}'
         volumes:
             - ~/.flowise:/root/.flowise
         entrypoint: /bin/sh -c "sleep 3; flowise start"
