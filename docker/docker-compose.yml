@@ -5,7 +5,7 @@ services:
         image: flowiseai/flowise
         restart: always
         environment:
-            - 'PORT=${PORT3000}'
+            - 'PORT=${PORT:3000}'
             - FLOWISE_USERNAME=${FLOWISE_USERNAME:-user}
             - FLOWISE_PASSWORD=${FLOWISE_PASSWORD:-password}
             - FLOWISE_SECRETKEY_OVERWRITE=${FLOWISE_SECRETKEY_OVERWRITE:-myencryptionkey}
