@@ -1,4 +1,5 @@
 version: '3.1'
+
 services:
     flowise:
         image: flowiseai/flowise
@@ -9,7 +10,7 @@ services:
             - FLOWISE_PASSWORD=${FLOWISE_PASSWORD:-password}
             - FLOWISE_SECRETKEY_OVERWRITE=${FLOWISE_SECRETKEY_OVERWRITE:-myencryptionkey}
         ports:
-            - '${PORT:-3003}:${PORT:3003}'
+            - "${PORT:-3003}:3003"
         volumes:
             - ~/.flowise:/root/.flowise
-        entrypoint: /bin/sh -c "sleep 3; flowise start"
+        entrypoint: exec flowise start
